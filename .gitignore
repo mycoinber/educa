@@ -1,0 +1,17 @@
+# Laravel specific
+.env
+.env.*
+
+# IDE/Editor specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# System/Temporary files
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
