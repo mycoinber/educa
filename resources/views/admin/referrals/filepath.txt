@@ -1,0 +1,5 @@
+Please replace the following files with the specified paths to enable the "Referral & Affiliate" plugin:
+
+history.blade.php >>>>>>> resources\views\admin\referrals
+users.blade.php >>>>>>> resources\views\admin\referrals
+referral.blade.php >>>>>>> resources\views\admin\settings\financial
