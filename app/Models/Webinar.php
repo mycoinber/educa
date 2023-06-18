@@ -9,6 +9,7 @@ use Jorenvh\Share\ShareFacade;
 use Spatie\CalendarLinks\Link;
 use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
+use App\Models\Subscribe;
 
 class Webinar extends Model implements TranslatableContract
 {
@@ -325,12 +326,26 @@ class Webinar extends Model implements TranslatableContract
     public function checkUserHasBought($user = null, $checkExpired = true): bool
     {
         $hasBought = false;
-
+ 
         if (empty($user) and auth()->check()) {
             $user = auth()->user();
         }
 
+
         if (!empty($user)) {
+            
+            $subscribeone = Subscribe::getActiveSubscribe($user->id);
+            if($subscribeone){
+                return true;
+            }
+    
+            // if ($subscribe){
+            //     $logPath = storage_path('logs/laravel.log');
+            //     $logData = json_encode($subscribe) . "\n";
+            //     file_put_contents($logPath, $logData, FILE_APPEND);
+    
+            // }
+
             $sale = Sale::where('buyer_id', $user->id)
                 ->where('webinar_id', $this->id)
                 ->where('type', 'webinar')

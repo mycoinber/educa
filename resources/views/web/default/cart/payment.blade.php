@@ -21,7 +21,7 @@
                 @if(!empty($paymentChannels))
                     @foreach($paymentChannels as $paymentChannel)
                         <div class="col-6 col-lg-4 mb-40 charge-account-radio">
-                            <input type="radio" name="gateway" id="{{ $paymentChannel->title }}" data-class="{{ $paymentChannel->class_name }}" value="{{ $paymentChannel->id }}">
+                            <input type="radio" name="gateway" id="{{ $paymentChannel->title }}" data-class="{{ $paymentChannel->class_name }}" value="{{ $paymentChannel->id }}" class="payment-channel">
                             <label for="{{ $paymentChannel->title }}" class="rounded-sm p-20 p-lg-45 d-flex flex-column align-items-center justify-content-center">
                                 <img src="{{ $paymentChannel->image }}" width="120" height="60" alt="">
 
@@ -35,7 +35,7 @@
                 @endif
 
                 <div class="col-6 col-lg-4 mb-40 charge-account-radio">
-                    <input type="radio" @if(empty($userCharge) or ($total > $userCharge)) disabled @endif name="gateway" id="offline" value="credit">
+                    <input type="radio" @if(empty($userCharge) or ($total > $userCharge)) disabled @endif name="gateway" id="offline" value="credit" class="payment-channel">
                     <label for="offline" class="rounded-sm p-20 p-lg-45 d-flex flex-column align-items-center justify-content-center">
                         <img src="/assets/default/img/activity/pay.svg" width="120" height="60" alt="">
 
@@ -49,11 +49,21 @@
                 </div>
             </div>
 
-
             <div class="d-flex align-items-center justify-content-between mt-45">
-                <span class="font-16 font-weight-500 text-gray">{{ trans('financial.total_amount') }} {{ addCurrencyToPrice($total) }}</span>
-                <button type="button" id="paymentSubmit" disabled class="btn btn-sm btn-primary">{{ trans('public.start_payment') }}</button>
+                <label for="oneTimePayment" class="font-16 font-weight-500 text-gray mr-3" style="display: inline-block;">Total Amount {{ addCurrencyToPrice($total) }}</label>
+                <div class="d-flex align-items-center">
+                    @if ($subscribe)
+                        <div id="oneTimePaymentWrapper" style="display: none;">
+                            <label>
+                                <input type="checkbox" name="oneTimePayment" id="oneTimePayment" value="1" style="margin-right: 5px;">
+                                <span>One time payment</span>
+                            </label>
+                        </div>
+                    @endif
+                    <button type="button" id="paymentSubmit" disabled class="btn btn-sm btn-primary">{{ trans('public.start_payment') }}</button>
+                </div>
             </div>
+
         </form>
 
         @if(!empty($razorpay) and $razorpay)
@@ -78,5 +88,29 @@
 @endsection
 
 @push('scripts_bottom')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var paymentChannels = document.querySelectorAll('.payment-channel');
+            var oneTimePaymentWrapper = document.getElementById('oneTimePaymentWrapper');
+            var oneTimePaymentCheckbox = document.getElementById('oneTimePayment');
+            var hiddenOneTimePayment = document.getElementById('hiddenOneTimePayment');
+            
+            for (var i = 0; i < paymentChannels.length; i++) {
+                paymentChannels[i].addEventListener('change', function() {
+                    var selectedPaymentChannel = document.querySelector('.payment-channel:checked');
+                    console.log(selectedPaymentChannel.dataset.class)
+                    if (selectedPaymentChannel && selectedPaymentChannel.dataset.class === 'Wayforpay') {
+                        oneTimePaymentWrapper.style.display = 'block';
+                    } else {
+                        oneTimePaymentWrapper.style.display = 'none';
+                    }
+                });
+            }
+            
+            oneTimePaymentCheckbox.addEventListener('change', function() {
+                hiddenOneTimePayment.value = oneTimePaymentCheckbox.checked ? '1' : '';
+            });
+        });
+    </script>
     <script src="/assets/default/js/parts/payment.min.js"></script>
 @endpush

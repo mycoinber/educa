@@ -21,7 +21,7 @@ class LearningPageController extends Controller
         $requestData = $request->all();
 
         $webinarController = new WebinarController();
-
+ 
         $data = $webinarController->course($slug, true);
 
         if (!$data or !$data['hasBought']) {

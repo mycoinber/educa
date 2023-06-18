@@ -34,7 +34,7 @@ class Order extends Model
 
     public $timestamps = false;
 
-    protected $guarded = ['id'];
+    protected $guarded = ['id', 'one_time_payment'];
 
     public function user()
     {

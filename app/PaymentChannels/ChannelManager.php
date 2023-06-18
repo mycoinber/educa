@@ -10,17 +10,10 @@ class ChannelManager
      * @param PaymentChannel $paymentChannel
      * @return IChannel
      */
-    public static function makeChannel(PaymentChannel $paymentChannel)
-{
-    $className = "App\\PaymentChannels\\Drivers\\" . $paymentChannel->class_name . "\\Channel";
-
-    if ($paymentChannel->class_name === 'WayForPay') {
-        $className = "App\\PaymentChannels\\Drivers\\WayForPay\\Channel";
+    public static function makeChannel(PaymentChannel $paymentChannel){
+        $className = "App\\PaymentChannels\\Drivers\\{$paymentChannel->class_name}\\Channel";
+        return new $className($paymentChannel);
     }
-
-    return new $className($paymentChannel);
-}
-
 
     /**
      * @param Order $order
@@ -31,6 +24,15 @@ class ChannelManager
         return route('receipt_verify', [
             'token' => config('services.bank_callback_token'),
             'receiptId' => $order->id
+        ]);
+    }
+
+    public static function registerWayforpayChannel()
+    {
+        PaymentChannel::create([
+            'name' => 'Wayforpay',
+            'class_name' => 'WayforpayChannel',
+            'description' => 'Payment channel for Wayforpay',
         ]);
     }
 }

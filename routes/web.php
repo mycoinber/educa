@@ -159,11 +159,11 @@ Route::group(['namespace' => 'Web', 'middleware' => ['check_mobile_app', 'impers
         Route::post('/{id}/availableTimes', 'UserController@availableTimes');
         Route::post('/{id}/send-message', 'UserController@sendMessage');
     });
-
+ 
     Route::group(['prefix' => 'payments'], function () {
         Route::post('/payment-request', 'PaymentController@paymentRequest');
         Route::get('/verify/{gateway}', ['as' => 'payment_verify', 'uses' => 'PaymentController@paymentVerify']);
-        Route::post('/verify/{gateway}', ['as' => 'payment_verify_post', 'uses' => 'PaymentController@paymentVerify']);
+        Route::post('/postverify/{gateway}', ['as' => 'payment_verify_post', 'uses' => 'PaymentController@paymentVerify']);
         Route::get('/status', 'PaymentController@payStatus');
         Route::get('/payku/callback/{id}', 'PaymentController@paykuPaymentVerify')->name('payku.result');
     });

@@ -477,7 +477,8 @@ class CartController extends Controller
                     'order' => $order,
                     'count' => $carts->count(),
                     'userCharge' => $user->getAccountingCharge(),
-                    'razorpay' => $razorpay
+                    'razorpay' => $razorpay,
+                    'subscribe' => 0
                 ];
 
                 return view(getTemplate() . '.cart.payment', $data);

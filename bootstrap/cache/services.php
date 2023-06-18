@@ -71,7 +71,6 @@
     67 => 'App\\Providers\\MinioStorageServiceProvider',
     68 => 'Gathuku\\Mpesa\\MpesaServiceProvider',
     69 => 'Ssheduardo\\Redsys\\RedsysServiceProvider',
-    70 => 'Maksa988\\WayForPay\\WayForPayServiceProvider',
   ),
   'eager' => 
   array (
@@ -130,7 +129,6 @@
     52 => 'App\\Providers\\MinioStorageServiceProvider',
     53 => 'Gathuku\\Mpesa\\MpesaServiceProvider',
     54 => 'Ssheduardo\\Redsys\\RedsysServiceProvider',
-    55 => 'Maksa988\\WayForPay\\WayForPayServiceProvider',
   ),
   'deferred' => 
   array (

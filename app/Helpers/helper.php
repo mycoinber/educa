@@ -58,15 +58,15 @@ function dateTimeFormat($timestamp, $format = 'H:i', $useAdminSetting = true, $a
 
 function getTimezone()
 {
-    $timezone = getGeneralSettings('default_time_zone');
+    $timezone = getGeneralSettings('Europe/Kyiv');
 
-    if (auth()->check()) {
-        $user = auth()->user();
+    // if (auth()->check()) {
+    //     $user = auth()->user();
 
-        if (!empty($user) and !empty($user->timezone)) {
-            $timezone = $user->timezone;
-        }
-    }
+    //     if (!empty($user) and !empty($user->timezone)) {
+    //         $timezone = $user->timezone;
+    //     }
+    // }
 
     return $timezone;
 }

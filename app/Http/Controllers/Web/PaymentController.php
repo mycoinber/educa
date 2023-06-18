@@ -33,10 +33,17 @@ class PaymentController extends Controller
         $user = auth()->user();
         $gateway = $request->input('gateway');
         $orderId = $request->input('order_id');
+        $oneTimePayment = $request->input('oneTimePayment');
 
         $order = Order::where('id', $orderId)
             ->where('user_id', $user->id)
             ->first();
+        if ($oneTimePayment)
+        {
+            $order->one_time_payment = $oneTimePayment;
+            $order->save();
+        }
+    
 
         if ($order->type === Order::$meeting) {
             $orderItem = OrderItem::where('order_id', $order->id)->first();
@@ -90,11 +97,17 @@ class PaymentController extends Controller
             $channelManager = ChannelManager::makeChannel($paymentChannel);
             $redirect_url = $channelManager->paymentRequest($order);
 
+            $logPath = storage_path('logs/laravel.log');
+            $logData = $redirect_url . "\n";
+            file_put_contents($logPath, $logData, FILE_APPEND);
+    
+    
+
             if (in_array($paymentChannel->class_name, PaymentChannel::$gatewayIgnoreRedirect)) {
                 return $redirect_url;
             }
 
-            return Redirect::away($redirect_url);
+            return Redirect::away($redirect_url); 
 
         } catch (\Exception $exception) {
 
@@ -112,7 +125,6 @@ class PaymentController extends Controller
         $paymentChannel = PaymentChannel::where('class_name', $gateway)
             ->where('status', 'active')
             ->first();
-
         try {
             $channelManager = ChannelManager::makeChannel($paymentChannel);
             $order = $channelManager->verify($request);

@@ -13,16 +13,16 @@ class PaymentChannel extends Model
     static $classes = [
         'Alipay', 'Authorizenet', 'Bitpay', 'Braintree', 'Cashu', 'Flutterwave',
         'Instamojo', 'Iyzipay', 'Izipay', 'KlarnaCheckout', 'MercadoPago', 'Midtrans',
-        'Mollie', 'Ngenius', 'Payfort', 'Payhere', 'Payku', 'Paylink', 'Paypal',
+        'Mollie', 'Ngenius', 'Payfort', 'Payhere', 'Payku', 'Paypal',
         'Paysera', 'Paystack', 'Paytm', 'Payu', 'Razorpay', 'Robokassa', 'Sslcommerz',
         'Stripe', 'Toyyibpay', 'Voguepay', 'YandexCheckout', 'Zarinpal', 'JazzCash',
-        'Redsys', 'WayForPay'
+        'Redsys', 'Wayforpay'
     ];
 
     static $gatewayIgnoreRedirect = [
         'Paytm', 'Payu', 'Zarinpal', 'Stripe', 'Paysera', 'Cashu',
         'MercadoPago', 'Payhere', 'Authorizenet', 'Voguepay', 'Payku', 'KlarnaCheckout', 'Izipay',
-        'JazzCash', 'Redsys'
+        'JazzCash', 'Redsys', 'Wayforpay'
     ];
 
     static $paypal = 'Paypal';
@@ -55,8 +55,8 @@ class PaymentChannel extends Model
     static $alipay = 'Alipay';
     static $braintree = 'Braintree';
     static $izipay = 'Izipay';
-    static $paylink = 'Paylink';
+    // static $paylink = 'Paylink';
     static $jazzCash = 'JazzCash';
     static $redsys = 'Redsys';
-    static $wayForPay = 'WayForPay';
+    static $wayforpay = 'Wayforpay';
 }

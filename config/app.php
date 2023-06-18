@@ -39,7 +39,8 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool) env('APP_DEBUG', true),
+    'log' => env('APP_LOG', 'single'),
 
     /*
     |--------------------------------------------------------------------------
@@ -186,7 +187,6 @@ return [
         App\Providers\MinioStorageServiceProvider::class,
         Gathuku\Mpesa\MpesaServiceProvider::class,
         Ssheduardo\Redsys\RedsysServiceProvider::class,
-        Maksa988\WayForPay\WayForPayServiceProvider::class,
     ],
 
     /*
@@ -245,7 +245,6 @@ return [
         'Rave' => KingFlamez\Rave\Facades\Rave::class,
         'Mpesa' => Gathuku\Mpesa\Facades\Mpesa::class,
         'Redsys'    => Ssheduardo\Redsys\Facades\Redsys::class,
-        'WayForPay' => Maksa988\WayForPay\Facades\WayForPay::class,
     ],
 
 ];

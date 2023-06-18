@@ -1,0 +1,187 @@
+<form method="POST" action="https://secure.wayforpay.com/pay" accept-charset="utf-8"><input type="hidden" name="merchantAccount" value="test_merch_n1" /><input type="hidden" name="merchantDomainName" value="https://google.com" /><input type="hidden" name="merchantSignature" value="4d96246d9176b71388fa9f16c14a92ee" /><input type="hidden" name="returnUrl" value="http://localhost:8001/payments/verify/Wayforpay?order_id=614" /><input type="hidden" name="orderReference" value="c097210ff3ea7389224bfdcc5a88dfc36ef68168" /><input type="hidden" name="orderDate" value="1687012612" /><input type="hidden" name="amount" value="1" /><input type="hidden" name="currency" value="UAH" /><input type="hidden" name="productName[]" value="test" /><input type="hidden" name="productPrice[]" value="0.01" /><input type="hidden" name="productCount[]" value="1" /><input type="hidden" name="clientFirstName" value="John" /><input type="hidden" name="clientLastName" value="Dou" /><input type="hidden" name="clientCountry" value="USA" /><input type="hidden" name="clientEmail" value="john.dou@gmail.com" /><input type="hidden" name="clientPhone" value="+12025550152" /><input type="submit" value="Pay" class="btn btn-primary"></form>Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => fb6db682c5401658b6f48d59db3d820e
+    [orderReference] => 9781c6bf1e4adb530fd279bb7b9300468e2ac315
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687018445
+    [processingDate] => 1687018470
+    [cardPan] => 44****7692
+    [cardType] => Visa
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => JSC UNIVERSAL BANK
+    [transactionStatus] => Declined
+    [reason] => Invalid card number
+    [reasonCode] => 1105
+    [fee] => 0
+    [paymentSystem] => card
+    [order_id] => 638
+)
+Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => fb6db682c5401658b6f48d59db3d820e
+    [orderReference] => 9781c6bf1e4adb530fd279bb7b9300468e2ac315
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687018445
+    [processingDate] => 1687018470
+    [cardPan] => 44****7692
+    [cardType] => Visa
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => JSC UNIVERSAL BANK
+    [transactionStatus] => Declined
+    [reason] => Invalid card number
+    [reasonCode] => 1105
+    [fee] => 0
+    [paymentSystem] => card
+    [order_id] => 638
+)
+Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => 9abaa36421153eb6d470ba19d942d777
+    [orderReference] => 1b7f57c945f0aa965febfd81902bbd64116d36cc
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687018721
+    [processingDate] => 1687018745
+    [cardPan] => 44****7692
+    [cardType] => Visa
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => JSC UNIVERSAL BANK
+    [transactionStatus] => Declined
+    [reason] => Invalid card number
+    [reasonCode] => 1105
+    [fee] => 0
+    [paymentSystem] => card
+    [order_id] => 639
+)
+Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => 7bc0940f6e9b9a7c6bd4c14def9336ad
+    [orderReference] => 4bfde08b8aa3f182406aa960f003056c034dfbc0
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687026818
+    [processingDate] => 1687026862
+    [cardPan] => 44****7692
+    [cardType] => Visa
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => JSC UNIVERSAL BANK
+    [transactionStatus] => Declined
+    [reason] => Invalid card number
+    [reasonCode] => 1105
+    [fee] => 0
+    [paymentSystem] => card
+    [order_id] => 640
+)
+Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => 50df51557634e61fafab18e47e3703a2
+    [orderReference] => a2bc8c92cffe2efefdca2519110a098b948196ea
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687027146
+    [processingDate] => 1687027198
+    [cardPan] => 44****7692
+    [cardType] => Visa
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => JSC UNIVERSAL BANK
+    [transactionStatus] => Declined
+    [reason] => Invalid card number
+    [reasonCode] => 1105
+    [fee] => 0
+    [paymentSystem] => card
+    [order_id] => 641
+)
+Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => 8ce354ce3456bfdb0d0decb66cc19b6c
+    [orderReference] => f171f9c25831ad087bceec5ac3f4d0835f9332bc
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 711306
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687027374
+    [processingDate] => 1687027453
+    [cardPan] => 53****4120
+    [cardType] => MasterCard
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => MONObank
+    [recToken] => 633b07c4-6acc-40ba-8f1b-16039cb36dc2
+    [transactionStatus] => Approved
+    [reason] => Ok
+    [reasonCode] => 1100
+    [fee] => 0.02
+    [paymentSystem] => card
+    [order_id] => 642
+)
+Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => d5740d529eef18d029c8de5211c69dff
+    [orderReference] => 95b0391178a27e579d644f7ee31c35126efe015a
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 815554
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687083607
+    [processingDate] => 1687083727
+    [cardPan] => 44****7692
+    [cardType] => Visa
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => JSC UNIVERSAL BANK
+    [recToken] => 633ad0df-a4c4-4634-811c-05699cb36dc2
+    [transactionStatus] => Approved
+    [reason] => Ok
+    [reasonCode] => 1100
+    [fee] => 0.02
+    [paymentSystem] => card
+    [order_id] => 644
+)
+Array
+(
+    [merchantAccount] => test_merch_n1
+    [merchantSignature] => d3a07716febcbe088ab08dd56073aeec
+    [orderReference] => 13fde170b6bf5599310f81bbb1ba188ad14913fa
+    [amount] => 1
+    [currency] => UAH
+    [authCode] => 873557
+    [email] => john.dou@gmail.com
+    [phone] => 12025550152
+    [createdDate] => 1687092184
+    [processingDate] => 1687092254
+    [cardPan] => 44****7692
+    [cardType] => Visa
+    [issuerBankCountry] => Ukraine
+    [issuerBankName] => JSC UNIVERSAL BANK
+    [recToken] => 633ad0df-a4c4-4634-811c-05699cb36dc2
+    [transactionStatus] => Approved
+    [reason] => Ok
+    [reasonCode] => 1100
+    [fee] => 0.02
+    [paymentSystem] => card
+    [order_id] => 646
+)

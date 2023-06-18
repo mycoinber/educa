@@ -1862,8 +1862,8 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector",
-                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector"
+                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector",
+                    "Doctrine\\Common\\Inflector\\": "lib/Doctrine/Common/Inflector"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3057,6 +3057,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "install-path": "../fruitcake/laravel-cors"
         },
         {
@@ -4359,12 +4360,12 @@
             },
             "installation-source": "dist",
             "autoload": {
-                "classmap": [
-                    "src/Rave.php"
-                ],
                 "psr-4": {
                     "KingFlamez\\Rave\\": "src/"
-                }
+                },
+                "classmap": [
+                    "src/Rave.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -6279,6 +6280,7 @@
             "support": {
                 "source": "https://github.com/melhorenvio/mercadopago-dx-php-laravel/tree/1.2.6"
             },
+            "abandoned": true,
             "install-path": "../melhorenvio/mercadopago-dx-php-laravel"
         },
         {
@@ -6859,12 +6861,12 @@
             },
             "installation-source": "dist",
             "autoload": {
-                "psr-4": {
-                    "JmesPath\\": "src/"
-                },
                 "files": [
                     "src/JmesPath.php"
-                ]
+                ],
+                "psr-4": {
+                    "JmesPath\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -7065,6 +7067,7 @@
                 "issues": "https://github.com/MyOnlineStore/omnipay-klarna-checkout/issues",
                 "source": "https://github.com/MyOnlineStore/omnipay-klarna-checkout/tree/5.0"
             },
+            "abandoned": true,
             "install-path": "../myonlinestore/omnipay-klarna-checkout"
         },
         {
