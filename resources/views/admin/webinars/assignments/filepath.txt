@@ -1,0 +1,6 @@
+Please replace the following files with the specified paths to enable the "assignment" plugin:
+
+features.blade.php >>>>>>> \resources\views\admin\settings\general
+
+lists.blade.php >>>>>>> \resources\views\admin\webinars\assignments
+
